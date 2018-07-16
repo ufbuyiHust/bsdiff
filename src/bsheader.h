@@ -11,7 +11,7 @@
 
 /* used for suffix sort in bsdiff */
 #define QSUF_BUCKET_SIZE 256
-
+//定义了三种类型的block
 enum BSDIFF_BLOCKS {
 	BSDIFF_BLOCK_CONTROL,
 	BSDIFF_BLOCK_DIFF,
@@ -19,6 +19,7 @@ enum BSDIFF_BLOCKS {
 };
 
 /* encodings bitfield */
+//每种block的相应的标志位
 typedef union {
 	struct {
 		uint16_t cblk_none : 1; /* control block enc's*/
@@ -44,7 +45,7 @@ typedef union {
 /***************************************************************
  * v2.x headers
  ***************************************************************/
-
+//两种格式的头文件
 /* cleaned up typing and optimized fields */
 #define BSDIFF_HDR_MAGIC_V20 "BSDIFF4U"
 /* directory header: uses only file_{mode|owner|group} */
